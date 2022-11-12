@@ -1,7 +1,14 @@
+import Navbar from '../components/Navbar'
+import { AuthContextProvider } from '../stores/authContext'
 import '@styles/globals.css'
 
 function Application({ Component, pageProps }) {
-  return <Component {...pageProps} />
+  return (
+    <AuthContextProvider>
+      <Navbar />
+      <Component {...pageProps} />
+    </AuthContextProvider>
+  )
 }
 
 export default Application
